@@ -13,5 +13,5 @@ cmake --build . # optionally with VERBOSE=1
 
 You can then run the built app:
 ```shell
-./play_libelectronic_id
+./demo_libelectronic_id
 ```
