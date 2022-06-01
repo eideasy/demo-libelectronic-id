@@ -31,10 +31,10 @@ jobs:
         run: |
           cmake --build .
           # Debian creates artifacts outside of project dir, copy them back to make them available in the build artifacts
-          cp -r ../../demo-libelectronic-id*.* src/app
+          cp -r ../../demo_libelectronic_id*.* src/app
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: demo-libelectronic-id-ubuntu-build-${{github.run_number}}
+          name: demo_libelectronic_id-ubuntu-build-${{github.run_number}}
           path: build/src/app/*.*deb
