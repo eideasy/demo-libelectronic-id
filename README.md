@@ -19,4 +19,4 @@ Now in the build folder:
 
 - Run the build
 
-      cmake --build
+      cmake --build . 
