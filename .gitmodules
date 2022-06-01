@@ -1,3 +1,4 @@
+
 [submodule "lib/libelectronic-id"]
 	path = lib/libelectronic-id
-	url = git@github.com:eideasy/libelectronic-id
+	url = ../libelectronic-id
