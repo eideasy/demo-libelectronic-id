@@ -1,0 +1,40 @@
+name: CMake (Ubuntu Linux)
+
+on: [push, pull_request]
+
+env:
+  BUILD_NUMBER: ${{github.run_number}}
+  QT_QPA_PLATFORM: offscreen
+  DEBIAN_FRONTEND: noninteractive
+  DEBFULLNAME: GitHub build
+  DEBEMAIL: github-action@github
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: mrts/qt-cmake-gtest-valgrind-ubuntu
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Create build directory
+        run: mkdir build
+
+      - name: Configure CMake
+        working-directory: ${{github.workspace}}/build
+        run: cmake ..
+
+      - name: Build
+        working-directory: ${{github.workspace}}/build
+        run: |
+          cmake --build .
+          # Debian creates artifacts outside of project dir, copy them back to make them available in the build artifacts
+          cp -r ../../web-eid*.* src/app
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: demo-libelectronic-id-ubuntu-build-${{github.run_number}}
+          path: build/src/app/*.*deb
