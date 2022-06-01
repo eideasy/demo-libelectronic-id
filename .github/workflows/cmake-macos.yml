@@ -40,5 +40,4 @@ jobs:
         with:
           name: demo-libelectronic-id-macos-build-${{github.run_number}}
           path: |
-            build/*/*/*.pkg
-            build/*/*/*.dmg
+            build/demo_libelectronic_id
