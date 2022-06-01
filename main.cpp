@@ -31,7 +31,7 @@ int main()
     auto cardInfo = autoSelectSupportedCard();
 
     //const auto reader_name = cardInfo->reader().name;
-    qDebug() << "Reader: " << cardInfo->reader().name;
+    //qDebug() << "Reader: " << cardInfo->reader().name;
     std::cout << "Selected card: " << cardInfo->eid().name() << std::endl;
     std::cout << std::endl;
 
