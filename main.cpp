@@ -30,8 +30,8 @@ int main()
 
     auto cardInfo = autoSelectSupportedCard();
 
-    const std::wstring reader_name = cardInfo->reader().name;
-    std::wcout << "Reader: " << reader_name << std::endl;
+    //const auto reader_name = cardInfo->reader().name;
+    qDebug() << "Reader: " << cardInfo->reader().name;
     std::cout << "Selected card: " << cardInfo->eid().name() << std::endl;
     std::cout << std::endl;
 
