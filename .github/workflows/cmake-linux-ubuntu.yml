@@ -30,8 +30,6 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: |
           cmake --build .
-          # Debian creates artifacts outside of project dir, copy them back to make them available in the build artifacts
-          cp -r ../../demo_libelectronic_id*.* src/app
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
