@@ -37,4 +37,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: demo_libelectronic_id-ubuntu-build-${{github.run_number}}
-          path: build/src/app/*.*deb
+          path: build/demo_libelectronic_id
