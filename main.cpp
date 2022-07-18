@@ -26,6 +26,8 @@ QString certBytesToText(byte_vector certificateBytes)
 
 int main()
 {
+    std::cout << "Build date: " << __DATE__ << std::endl;
+    std::cout << "Build time: " << __TIME__ << std::endl;
     std::cout << "*** START ***" << std::endl;
 
     auto cardInfo = autoSelectSupportedCard();
