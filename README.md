@@ -15,7 +15,7 @@ Use _Powershell_ to run the following commands to build the project.
 Now in the build folder:
 - Run _CMake_:
 
-      cmake -A x64  "-DCMAKE_TOOLCHAIN_FILE=c:/vcpkg/scripts/buildsystems/vcpkg.cmake"
+      cmake -A x64  "-DCMAKE_TOOLCHAIN_FILE=c:/vcpkg/scripts/buildsystems/vcpkg.cmake" .
 
 - Run the build
 
